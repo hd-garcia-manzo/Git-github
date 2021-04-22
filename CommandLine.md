@@ -70,28 +70,29 @@ C:\User\Example
  ```
 With this command we can move freely between the directories
 
-## Pushd ??
-
 # Compare
+
+| Command | Description                                                  |
+| ------- | ------------------------------------------------------------ |
+| wc      | Allows you to count the number of lines, words, characters, and bytes of each given file or standard input and print the result |
+```
+$ wc *.md
+  184   588  3741 CommandLine.md
+  376  1827 13707 GitCodes.md
+    2     8    32 README.md
+  562  2423 17480 total
+```
+
 # Find files, folders and inside files
-## Finding Files (find)
-| Command                   | Description                              |
-| ------------------------- | ---------------------------------------- |
-| find  /dir/  -name  name* | Find files starting with "name" in "dir" |
+| Command                    | Description                              |
+| -------------------------- | ---------------------------------------- |
+| find  /dir/  -name  "name" | Find files starting with "name" in "dir" |
 
 ```
-C:\User\Example
-$ ls
-DirectoryName1/
-
-C:\User\Example
-$ touch file1.txt
- 
-C:\User\Example
-$ ls
-file1.txt DirectoryName1/
+$ find . -name '*txt'
 ```
-# Create and edit text files
+Next, a list of all files ending in .txt is displayed, even those found in other directories
+
 ## Create empty file (touch)
 | Command | Description |
 | ------- | ----------- |
@@ -183,3 +184,49 @@ This is a text
 A text editor will open where you can edit the file, to exit that editor press Ctrl + X
 
 # Get the state of the computer
+
+| Command    | Description                                                  |
+| ---------- | ------------------------------------------------------------ |
+| systeminfo | Displays the specific properties and settings of the computer. |
+| uname      | print system information                                     |
+| lshw tool  | gather vast information about your hardware components such as cpu, disks, memory, usb controllers etc. |
+
+```
+$ systeminfo
+
+Nombre de host:                            LAPTOP-XXXXX
+Nombre del sistema operativo:              Microsoft Windows 10 Home Single Language
+Versión del sistema operativo:            XXXXXXXXXXXXXX
+Fabricante del sistema operativo:          XXXX
+Configuración del sistema operativo:       XXXX
+Tipo de compilación del sistema operativo: XXXX
+Propiedad de:                              XXXX
+Organización registrada:                   XXXX
+Id. del producto:                          XXXX
+Fecha de instalación original:             XXXX
+Tiempo de arranque del sistema:            XXXX
+Fabricante del sistema:                    XXXX
+Modelo el sistema:                         XXXX
+Tipo de sistema:                           XXXX
+```
+
+```
+$ uname
+
+Linux
+
+$ sudo lshw
+
+tecmint.com               
+    description: Notebook
+    product: XXX
+    vendor: LENOVO
+    version: Lenovo
+    serial: XXXXX
+    width: 64 bits
+    capabilities: XXX
+```
+
+## References
+- Shaw, Z., 2011. _The CLI Crash Course: Controlling Your Computer With The Terminal_.
+- Kili, A., 2021. _10 Useful Commands to Collect System and Hardware Information in Linux_. [online] Tecmint.com. Available at: <https://www.tecmint.com/commands-to-collect-system-and-hardware-information-in-linux/#:~:text=1.,kernel%20name%20of%20your%20system.&text=To%20view%20your%20network%20hostname,with%20uname%20command%20as%20shown.> [Accessed 21 April 2021].

@@ -232,6 +232,17 @@ $ git push -u origin main
 ```
 And you can check it by entering the URL you added, there you will find the files that we added in the commit
 
+| Command                                                      | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| git remote -v                                                | shows you where you are getting the repositories from        |
+| git fetch [Nickname from where you are getting the repositories] | get the data of latest version that is uploaded to a remote repository |
+```
+C:\User\Example\NewProject
+$ git remote -v
+origin  https://github.com/hd-garcia-manzo/Git-github.git (fetch)
+origin  https://github.com/hd-garcia-manzo/Git-github.git (push)
+```
+
 # Branches: create, delete, save/commit & merge
 | Command                 | Description         |
 | ----------------------- | ------------------- |
@@ -334,3 +345,33 @@ Fast-forward
 ```
 
 # Gitflow
+
+The Gitflow workflow defines a strict branching model designed around project publishing. Provides a solid framework for managing larger projects.
+
+This workflow does not add any new concepts or commands beyond what is needed for the function branch workflow.
+
+The git-flow installation process is straightforward. The git-flow packages are available on various operating systems.
+
+On Windows, you will have to download and install git-flow. After installing git-flow, you can use it in your project by running git flow init.
+```
+$ git flow init
+```
+The git flow init command is an extension of the default git init command and does not change anything about your repository other than creating branches for you.
+
+The general flow of Gitflow is as follows:
+
+ 1. A development branch is created from the master. 
+ 2. A publishing branch is created from the development branch. 
+ 3. Function branches are created from the development branch.
+ 4. When a function is complete, it is merged into the development branch.
+ 5. When the publishing branch is ready, it is merged into the development branch and the master. 
+ 6. If an issue is detected in the master, a remediation branch is created from    the master. 
+ 7. Once the proofing is complete, it is merged with both the   
+    developmental and the master.
+
+
+
+## Refereces
+- Atlassian. 2021. _Flujo de trabajo de Gitflow | Atlassian Git Tutorial_. [online] Available at: <https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow> [Accessed 21 April 2021].
+
+- Chacon, S. and Straub, B., 2014. _Pro Git_. 2nd ed. [ebook] Available at: <https://git-scm.com/book/en/v2> [Accessed 21 April 2021].
